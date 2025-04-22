@@ -11,7 +11,7 @@ import SwiftUI
 struct ThreadsCloneSUIApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
