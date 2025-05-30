@@ -13,7 +13,7 @@ struct ThreadsTabView: View {
     var body: some View {
         TabView(selection: $selectedTab) {
             
-            Text("House")
+            FeedView()
                 .tabItem {
                     Image(systemName: selectedTab == 0 ? "house.fill" : "house")
                         .environment(\.symbolVariants, selectedTab == 0 ? .fill : .none)

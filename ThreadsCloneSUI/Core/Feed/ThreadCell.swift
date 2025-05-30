@@ -68,9 +68,13 @@ struct ThreadCell: View {
                     }
                     .foregroundStyle(.black)
                     .padding(.vertical, 8)
+                    
                 }
             }
+            
+            Divider()
         }
+        .padding()
     }
 }
 
