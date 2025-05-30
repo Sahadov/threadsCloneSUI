@@ -6,8 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		D192533D2DE9535C00E443C0 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D192533C2DE9535C00E443C0 /* UserCell.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		D13000E62DB5CB6E00AABB24 /* ThreadsCloneSUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ThreadsCloneSUI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D192533C2DE9535C00E443C0 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +37,7 @@
 		D13000DD2DB5CB6E00AABB24 = {
 			isa = PBXGroup;
 			children = (
+				D192533C2DE9535C00E443C0 /* UserCell.swift */,
 				D13000E82DB5CB6E00AABB24 /* ThreadsCloneSUI */,
 				D13000E72DB5CB6E00AABB24 /* Products */,
 			);
@@ -119,6 +125,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D192533D2DE9535C00E443C0 /* UserCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
