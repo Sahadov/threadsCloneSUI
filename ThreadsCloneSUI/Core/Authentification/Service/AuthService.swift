@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 
 class AuthService {
+    static let shared = AuthService()
     
     @MainActor
     func login(withEmail email:String, password: String) async throws {
