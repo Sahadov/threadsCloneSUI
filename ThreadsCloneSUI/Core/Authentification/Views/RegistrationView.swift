@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
+    @StateObject var viewModel = RegistrationViewModel()
     @State var email: String = ""
     @State var password: String = ""
     @State var fullName: String = ""
@@ -36,7 +37,7 @@ struct RegistrationView: View {
             }
             
             Button {
-                
+                Task { try await viewModel.createUser() }
             } label: {
                 Text("Sign Up")
                     .modifier(ThreadsButtonModifier())
