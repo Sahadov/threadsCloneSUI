@@ -1,0 +1,25 @@
+//
+//  ContentViewModel.swift
+//  ThreadsCloneSUI
+//
+//  Created by Dmitry Volkov on 29/06/2025.
+//
+
+import Foundation
+import Combine
+import FirebaseAuth
+
+class ContentViewModel: ObservableObject {
+    @Published var userSession: FirebaseAuth.User?
+    
+    init() {
+        
+    }
+    
+    private func setupSubscribers() {
+        AuthService.shared.$userSession.sink { [weak self] userSession in
+            self?.userSession = userSession
+        }
+    }
+    
+}
