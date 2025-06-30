@@ -22,5 +22,4 @@ class RegistrationViewModel: ObservableObject {
             username: userName
         )
     }
-    
 }
