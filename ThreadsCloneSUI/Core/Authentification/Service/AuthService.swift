@@ -23,6 +23,7 @@ class AuthService {
         do {
             let result = try await Auth.auth().signIn(withEmail: email, password: password)
             self.userSession = result.user
+            try await UserService.shared.fetchCurrentUser()
             print("DEBUG: User logged in \(result.user.uid)")
             print("DEBUG: User session \(String(describing: self.userSession))")
         } catch {
@@ -45,6 +46,7 @@ class AuthService {
     func signOut() {
         try? Auth.auth().signOut()
         self.userSession = nil
+        UserService.shared.reset()
     }
     
     @MainActor
@@ -58,5 +60,6 @@ class AuthService {
         let user = User(id: id, fullname: fullname, email: email, username: username, profileImageUrl: nil, bio: nil)
         guard let userData = try? Firestore.Encoder().encode(user) else { return }
         try await Firestore.firestore().collection("users").document(id).setData(userData)
+        UserService.shared.currentUser = user
     }
 }
