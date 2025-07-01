@@ -22,7 +22,7 @@ struct ThreadsTabView: View {
                 .onAppear { selectedTab = 0 }
                 .tag(0)
             
-            Text("Explore")
+            ExploreView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
