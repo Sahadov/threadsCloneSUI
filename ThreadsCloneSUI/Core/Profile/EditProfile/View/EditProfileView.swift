@@ -92,7 +92,8 @@ struct EditProfileView: View {
                 
                 ToolbarItem(placement: .topBarTrailing) {
                     Button("Done") {
-                        
+                        Task { try await viewModel.updateUserData() }
+                        dismiss()
                     }
                     .font(.subheadline)
                     .fontWeight(.semibold)
