@@ -34,6 +34,11 @@ class UserService {
         self.currentUser = user
     }
     
+    static func fetchUser(withUid uid: String) async throws -> User {
+        let shapshot = try await Firestore.firestore().collection("users").document(uid).getDocument()
+        return try shapshot.data(as: User.self)
+    }
+    
     func reset() {
         self.currentUser = nil
     }
